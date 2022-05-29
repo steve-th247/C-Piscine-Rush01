@@ -6,7 +6,7 @@
 /*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:14:53 by tjien-ji          #+#    #+#             */
-/*   Updated: 2022/05/29 18:18:40 by tjien-ji         ###   ########.fr       */
+/*   Updated: 2022/05/29 18:49:22 by tjien-ji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	write_sol_to_stdout(short int solu_grid[][4])
 	int		col_ind;
 	char	out_str[3];
 
+	row_ind = 0;
+	col_ind = 0;
 	out_str[1] = ' ';
 	while (row_ind < 4)
 	{

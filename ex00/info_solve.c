@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   info_solve.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 18:08:50 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 18:10:27 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "bit_funcs.h"
 
 int	is_solved(short int solu_grid[][4])
 {
 	int	row_ind;
-	int col_ind;
+	int	col_ind;
 
 	row_ind = 0;
 	col_ind = 0;
@@ -23,7 +35,7 @@ int	is_solved(short int solu_grid[][4])
 int	is_unsolvable(short int possi_grid[][4])
 {
 	int	row_ind;
-	int col_ind;
+	int	col_ind;
 
 	row_ind = 0;
 	col_ind = 0;

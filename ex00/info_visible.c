@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   info_visible.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 18:12:55 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 18:12:57 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "info_visible.h"
 
 int	get_visible_num(short int solu_grid[][4], int vpts_ind)
 {
-	int ret_val;
+	int	ret_val;
 
 	ret_val = -1;
 	if (vpts_ind >= 0 && vpts_ind <= 3)
@@ -13,8 +25,7 @@ int	get_visible_num(short int solu_grid[][4], int vpts_ind)
 		ret_val = get_visible_row(solu_grid, vpts_ind, 1);
 	else if (vpts_ind >= 12 && vpts_ind <= 15)
 		ret_val = get_visible_row(solu_grid, vpts_ind, -1);
-
-	return ret_val;
+	return (ret_val);
 }
 
 int	get_visible_col(short int solu_grid[][4], int vpts_ind, int dir)

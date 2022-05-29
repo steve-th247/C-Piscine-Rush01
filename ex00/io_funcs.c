@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   io_funcs.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 18:14:53 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 18:18:40 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include "io_funcs.h"
 
 int	is_input_valid(char *args)
 {
 	int	args_ind;
-	int args_len;
+	int	args_len;
 
 	args_ind = 0;
 	args_len = 0;
@@ -14,21 +26,21 @@ int	is_input_valid(char *args)
 		return (0);
 	while (args_ind < args_len)
 	{
-		if ((args_ind % 2) == 0 && !(args[args_ind] >= '0' && args[args_ind] <= '9'))
+		if ((args_ind % 2) == 0 && !(args[args_ind] >= '0'
+				&& args[args_ind] <= '9'))
 			return (0);
 		if ((args_ind % 2) == 1 && !(args[args_ind] == ' '))
 			return (0);
 		args_ind++;
 	}
 	return (1);
-
 }
 
 void	write_sol_to_stdout(short int solu_grid[][4])
 {
-	int row_ind;
-	int col_ind;
-	char out_str[3];
+	int		row_ind;
+	int		col_ind;
+	char	out_str[3];
 
 	out_str[1] = ' ';
 	while (row_ind < 4)
@@ -49,7 +61,7 @@ void	str_split_to_int(short int *vpts, char *args)
 {
 	int	vpts_ind;
 	int	args_ind;
-	
+
 	vpts_ind = 0;
 	args_ind = 0;
 	while (args_ind <= 31)

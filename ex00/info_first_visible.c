@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   info_first_visible.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 18:06:42 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 18:09:55 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "info_first_visible.h"
 
 int	get_first_visible_height(short int solu_grid[][4], int vpts_ind)
@@ -12,8 +24,8 @@ int	get_first_visible_height(short int solu_grid[][4], int vpts_ind)
 
 int	get_first_visible_height_col(short int solu_grid[][4], int vpts_ind)
 {
-	int row_ind;
-	int col_ind;
+	int	row_ind;
+	int	col_ind;
 	int	dir;
 
 	col_ind = vpts_ind % 4;
@@ -36,8 +48,8 @@ int	get_first_visible_height_col(short int solu_grid[][4], int vpts_ind)
 
 int	get_first_visible_height_row(short int solu_grid[][4], int vpts_ind)
 {
-	int row_ind;
-	int col_ind;
+	int	row_ind;
+	int	col_ind;
 	int	dir;
 
 	row_ind = vpts_ind % 4;

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   info_hidden.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 18:08:04 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 18:10:13 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "info_hidden.h"
 #include "info_first_visible.h"
 
 int	get_hidden_num(short int solu_grid[][4], int vpts_ind)
 {
-	int ret_val;
+	int	ret_val;
 
 	ret_val = -1;
 	if (vpts_ind >= 0 && vpts_ind <= 3)
@@ -14,7 +26,7 @@ int	get_hidden_num(short int solu_grid[][4], int vpts_ind)
 		ret_val = get_hidden_num_row(solu_grid, vpts_ind, 1);
 	else if (vpts_ind >= 12 && vpts_ind <= 15)
 		ret_val = get_hidden_num_row(solu_grid, vpts_ind, -1);
-	return ret_val;
+	return (ret_val);
 }
 
 int	get_hidden_num_col(short int solu_grid[][4], int vpts_ind, int dir)

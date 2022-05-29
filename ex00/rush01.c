@@ -15,7 +15,7 @@ int	main(int argc, char **argv)
 	short int	vpts[16];
 
 	if ((argc != 2) || !is_input_valid(argv[1]))
-	{ 
+	{
 		write(1, "Error\n", 6);
 		return (-1);
 	}
@@ -50,8 +50,9 @@ void	initialize_grids(short int solu_grid[][4], short int possi_grid[][4])
 		{
 			solu_grid[ind_row][ind_col] = 0;
 			possi_grid[ind_row][ind_col] = 0b1111;
-			
+			ind_col++;
 		}
+		ind_row++;
 	}
 }
 

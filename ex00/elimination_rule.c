@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   elimination_rule.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 18:02:31 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 18:03:21 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "elimination_rule.h"
 #include "possi_grid.h"
 
-void	apply_elimination_rule(short int solu_grid[][4], short int possi_grid[][4])
+void	apply_elimination_rule(short int solu_grid[][4],
+			short int possi_grid[][4])
 {
 	int	ind;
 
@@ -20,11 +33,12 @@ void	apply_elimination_rule(short int solu_grid[][4], short int possi_grid[][4])
 	update_possi_grid(solu_grid, possi_grid);
 }
 
-void	apply_exclusivity_row(short int solu_grid[][4], short int possi_grid[][4], int row_ind)
+void	apply_exclusivity_row(short int solu_grid[][4],
+			short int possi_grid[][4], int row_ind)
 {
 	int	col_ind;
 	int	sum_bit;
-	int bit_ind;
+	int	bit_ind;
 
 	col_ind = 0;
 	sum_bit = 0;
@@ -44,10 +58,10 @@ void	apply_exclusivity_row(short int solu_grid[][4], short int possi_grid[][4], 
 	}
 }
 
-void	apply_exclusivity_row_bit(short int solu_grid[][4], short int possi_grid[][4],
-			int row_ind, int bit_ind)
+void	apply_exclusivity_row_bit(short int solu_grid[][4],
+			short int possi_grid[][4], int row_ind, int bit_ind)
 {
-	int col_ind;
+	int	col_ind;
 
 	col_ind = 0;
 	while (col_ind < 4)
@@ -58,11 +72,12 @@ void	apply_exclusivity_row_bit(short int solu_grid[][4], short int possi_grid[][
 	}
 }
 
-void	apply_exclusivity_col(short int solu_grid[][4], short int possi_grid[][4], int col_ind)
+void	apply_exclusivity_col(short int solu_grid[][4],
+			short int possi_grid[][4], int col_ind)
 {
 	int	row_ind;
 	int	sum_bit;
-	int bit_ind;
+	int	bit_ind;
 
 	row_ind = 0;
 	sum_bit = 0;
@@ -82,10 +97,10 @@ void	apply_exclusivity_col(short int solu_grid[][4], short int possi_grid[][4], 
 	}
 }
 
-void	apply_exclusivity_col_bit(short int solu_grid[][4], short int possi_grid[][4],
-			int col_ind, int bit_ind)
+void	apply_exclusivity_col_bit(short int solu_grid[][4],
+			short int possi_grid[][4], int col_ind, int bit_ind)
 {
-	int row_ind;
+	int	row_ind;
 
 	row_ind = 0;
 	while (row_ind < 4)

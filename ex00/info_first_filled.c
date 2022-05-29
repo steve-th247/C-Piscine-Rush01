@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   info_first_filled.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 18:05:35 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 18:09:42 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "info_first_filled.h"
 #include "info_first_visible.h"
 
@@ -13,8 +25,8 @@ int	get_index_first_filled(short int solu_grid[][4], int vpts_ind)
 
 int	get_index_first_filled_col(short int solu_grid[][4], int vpts_ind)
 {
-	int row_ind;
-	int col_ind;
+	int	row_ind;
+	int	col_ind;
 	int	dir;
 
 	col_ind = vpts_ind % 4;
@@ -37,8 +49,8 @@ int	get_index_first_filled_col(short int solu_grid[][4], int vpts_ind)
 
 int	get_index_first_filled_row(short int solu_grid[][4], int vpts_ind)
 {
-	int row_ind;
-	int col_ind;
+	int	row_ind;
+	int	col_ind;
 	int	dir;
 
 	row_ind = vpts_ind % 4;

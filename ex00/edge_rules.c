@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   edge_rules.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 17:56:04 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 17:58:27 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "edge_rules.h"
 
 void	apply_edge_rules(short int solu_grid[][4], short int *vpts)
@@ -8,7 +20,7 @@ void	apply_edge_rules(short int solu_grid[][4], short int *vpts)
 
 void	apply_edge_rules1(short int solu_grid[][4], short int *vpts)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 16)
@@ -30,7 +42,7 @@ void	apply_edge_rules1(short int solu_grid[][4], short int *vpts)
 
 void	apply_edge_rules4(short int solu_grid[][4], short int *vpts)
 {
-	int 	i;
+	int	i;
 
 	i = 0;
 	while (i < 16)

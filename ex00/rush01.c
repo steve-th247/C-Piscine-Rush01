@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rush01.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 18:24:50 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 18:24:55 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include "io_funcs.h"
 #include "info_solve.h"
@@ -55,9 +67,3 @@ void	initialize_grids(short int solu_grid[][4], short int possi_grid[][4])
 		ind_row++;
 	}
 }
-
-
-
-
-
-

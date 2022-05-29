@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vpts_rules4.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 18:38:03 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 18:38:04 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vpts_rules4.h"
 #include "possi_grid.h"
 
-void	apply_vpts_rule4(short int solu_grid[][4], short int possi_grid[][4], short int *vpts)
+void	apply_vpts_rule4(short int solu_grid[][4], short int possi_grid[][4],
+			short int *vpts)
 {
 	int	i;
 

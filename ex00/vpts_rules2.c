@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vpts_rules2.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 18:31:56 by tjien-ji          #+#    #+#             */
+/*   Updated: 2022/05/29 18:34:59 by tjien-ji         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vpts_rules2.h"
 #include "mask_funcs.h"
 
-void	apply_vpts_rule2(short int solu_grid[][4], short int possi_grid[][4], short int *vpts)
+void	apply_vpts_rule2(short int solu_grid[][4], short int possi_grid[][4],
+			short int *vpts)
 {
 	int	i;
 
@@ -20,8 +33,8 @@ void	apply_vpts_rule2(short int solu_grid[][4], short int possi_grid[][4], short
 	}
 }
 
-void	apply_vpts_rule2_colup(short int solu_grid[][4], short int possi_grid[][4], int col_ind, 
-			short int vpts)
+void	apply_vpts_rule2_colup(short int solu_grid[][4],
+			short int possi_grid[][4], int col_ind, short int vpts)
 {
 	int			row_ind;
 	short int	*ptr;
@@ -34,14 +47,14 @@ void	apply_vpts_rule2_colup(short int solu_grid[][4], short int possi_grid[][4],
 		{
 			ptr = &possi_grid[row_ind][col_ind];
 			bitmask = get_mask_most_sig(possi_grid[row_ind + 1][col_ind]);
-			*ptr = *ptr & (bitmask  >> 1);
+			*ptr = *ptr & (bitmask >> 1);
 			row_ind--;
 		}
 	}
 }
 
-void	apply_vpts_rule2_coldown(short int solu_grid[][4], short int possi_grid[][4], int col_ind, 
-			short int vpts)
+void	apply_vpts_rule2_coldown(short int solu_grid[][4],
+			short int possi_grid[][4], int col_ind, short int vpts)
 {
 	int			row_ind;
 	short int	*ptr;
@@ -54,14 +67,14 @@ void	apply_vpts_rule2_coldown(short int solu_grid[][4], short int possi_grid[][4
 		{
 			ptr = &possi_grid[row_ind][col_ind];
 			bitmask = get_mask_most_sig(possi_grid[row_ind - 1][col_ind]);
-			*ptr = *ptr & (bitmask  >> 1);
+			*ptr = *ptr & (bitmask >> 1);
 			row_ind++;
 		}
 	}
 }
 
-void	apply_vpts_rule2_rowleft(short int solu_grid[][4], short int possi_grid[][4], int row_ind, 
-			short int vpts)
+void	apply_vpts_rule2_rowleft(short int solu_grid[][4],
+			short int possi_grid[][4], int row_ind, short int vpts)
 {
 	int			col_ind;
 	short int	*ptr;
@@ -74,14 +87,14 @@ void	apply_vpts_rule2_rowleft(short int solu_grid[][4], short int possi_grid[][4
 		{
 			ptr = &possi_grid[row_ind][col_ind];
 			bitmask = get_mask_most_sig(possi_grid[row_ind][col_ind + 1]);
-			*ptr = *ptr & (bitmask  >> 1);
+			*ptr = *ptr & (bitmask >> 1);
 			col_ind--;
 		}
 	}
 }
 
-void	apply_vpts_rule2_rowright(short int solu_grid[][4], short int possi_grid[][4], int row_ind, 
-			short int vpts)
+void	apply_vpts_rule2_rowright(short int solu_grid[][4],
+			short int possi_grid[][4], int row_ind, short int vpts)
 {
 	int			col_ind;
 	short int	*ptr;
@@ -94,7 +107,7 @@ void	apply_vpts_rule2_rowright(short int solu_grid[][4], short int possi_grid[][
 		{
 			ptr = &possi_grid[row_ind][col_ind];
 			bitmask = get_mask_most_sig(possi_grid[row_ind][col_ind - 1]);
-			*ptr = *ptr & (bitmask  >> 1);
+			*ptr = *ptr & (bitmask >> 1);
 			col_ind++;
 		}
 	}

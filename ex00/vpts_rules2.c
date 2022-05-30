@@ -24,11 +24,11 @@ void	apply_vpts_rule2(short int solu_grid[][4], short int possi_grid[][4],
 		if (i >= 0 && i <= 3)
 			apply_vpts_rule2_colup(solu_grid, possi_grid, i, vpts[i]);
 		else if (i >= 4 && i <= 7)
-			apply_vpts_rule2_coldown(solu_grid, possi_grid, i - 3, vpts[i]);
+			apply_vpts_rule2_coldown(solu_grid, possi_grid, i % 4, vpts[i]);
 		else if (i >= 8 && i <= 11)
-			apply_vpts_rule2_rowleft(solu_grid, possi_grid, i - 7, vpts[i]);
+			apply_vpts_rule2_rowleft(solu_grid, possi_grid, i % 4, vpts[i]);
 		else if (i >= 12 && i <= 15)
-			apply_vpts_rule2_rowright(solu_grid, possi_grid, i - 11, vpts[i]);
+			apply_vpts_rule2_rowright(solu_grid, possi_grid, i % 4, vpts[i]);
 		i++;
 	}
 }

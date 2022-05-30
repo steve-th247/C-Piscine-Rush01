@@ -14,6 +14,9 @@
 #include "possi_grid.h"
 #include "bit_funcs.h"
 
+static void	sudoku_rule_state_init(short int *row_has_num,
+				short int *col_has_num, short int *row_ind, short int *col_ind);
+
 void	apply_sudoku_rule(short int solu_grid[][4], short int possi_grid[][4])
 {
 	short int	val;
@@ -33,10 +36,7 @@ void	apply_sudoku_rule_val(short int solu_grid[][4], short int val)
 	short int	row_ind;
 	short int	col_ind;
 
-	row_has_num = 0;
-	col_has_num = 0;
-	row_ind = -1;
-	col_ind = -1;
+	sudoku_rule_state_init(&row_has_num, &col_has_num, &row_ind, &col_ind);
 	while (++val <= 4)
 	{
 		while (++row_ind < 4)
@@ -45,13 +45,15 @@ void	apply_sudoku_rule_val(short int solu_grid[][4], short int val)
 			{
 				if (solu_grid[row_ind][col_ind] == val)
 				{
-					row_has_num = row_has_num | (1 << (4 - row_ind));
-					col_has_num = col_has_num | (1 << (4 - col_ind));
+					row_has_num = row_has_num | (1 << row_ind);
+					col_has_num = col_has_num | (1 << col_ind);
 				}
 			}
+			col_ind = -1;
 		}
+		write_sudoku_change(solu_grid, val, row_has_num, col_has_num);
+		sudoku_rule_state_init(&row_has_num, &col_has_num, &row_ind, &col_ind);
 	}
-	write_sudoku_change(solu_grid, val, row_has_num, col_has_num);
 }
 
 void	write_sudoku_change(short int solu_grid[][4], short int val
@@ -65,7 +67,16 @@ void	write_sudoku_change(short int solu_grid[][4], short int val
 	col_num = (~col_has_num) & 0b1111;
 	if ((count_bits(row_num) == 1) && (count_bits(col_num) == 1))
 	{
-		ptr = &solu_grid[binary_to_ind(row_num)][binary_to_ind(col_num)];
+		ptr = &solu_grid[get_ind_most_sig(row_num)][get_ind_most_sig(col_num)];
 		*ptr = val;
 	}
+}
+
+static void	sudoku_rule_state_init(short int *row_has_num,
+				short int *col_has_num, short int *row_ind, short int *col_ind)
+{
+	*row_has_num = 0;
+	*col_has_num = 0;
+	*row_ind = -1;
+	*col_ind = -1;
 }

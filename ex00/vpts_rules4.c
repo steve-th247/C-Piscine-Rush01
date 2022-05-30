@@ -31,9 +31,9 @@ void	apply_vpts_rule4(short int solu_grid[][4], short int possi_grid[][4],
 		if (i >= 8 && i <= 11)
 		{
 			if (vpts[i] == 1 && vpts[i + 4] == 2)
-				solu_grid[i][3] = 3;
+				solu_grid[i % 4][3] = 3;
 			else if (vpts[i] == 2 && vpts[i + 4] == 1)
-				solu_grid[i][0] = 3;
+				solu_grid[i % 4][0] = 3;
 		}
 		i++;
 	}

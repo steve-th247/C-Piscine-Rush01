@@ -35,6 +35,7 @@ void	apply_vpts_rule4(short int solu_grid[][4], short int possi_grid[][4],
 			else if (vpts[i] == 2 && vpts[i + 4] == 1)
 				solu_grid[i][0] = 3;
 		}
+		i++;
 	}
 	update_possi_grid(solu_grid, possi_grid);
 }

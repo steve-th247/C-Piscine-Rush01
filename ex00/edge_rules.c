@@ -30,11 +30,11 @@ void	apply_edge_rules1(short int solu_grid[][4], short int *vpts)
 			if (i >= 0 && i <= 3)
 				solu_grid[0][i] = 4;
 			else if (i >= 4 && i <= 7)
-				solu_grid[3][i - 3] = 4;
+				solu_grid[3][i % 4] = 4;
 			else if (i >= 8 && i <= 11)
-				solu_grid[i - 7][0] = 4;
+				solu_grid[i % 4][0] = 4;
 			else if (i >= 12 && i <= 15)
-				solu_grid[i - 11][3] = 4;
+				solu_grid[i % 4][3] = 4;
 		}
 		i++;
 	}
@@ -52,11 +52,11 @@ void	apply_edge_rules4(short int solu_grid[][4], short int *vpts)
 			if (i >= 0 && i <= 3)
 				change_col_rules4(solu_grid, i, 1);
 			else if (i >= 4 && i <= 7)
-				change_col_rules4(solu_grid, i - 3, -1);
+				change_col_rules4(solu_grid, i % 4, -1);
 			else if (i >= 8 && i <= 11)
-				change_row_rules4(solu_grid, i - 7, 1);
+				change_row_rules4(solu_grid, i % 4, 1);
 			else if (i >= 12 && i <= 15)
-				change_row_rules4(solu_grid, i - 11, -1);
+				change_row_rules4(solu_grid, i % 4, -1);
 		}
 		i++;
 	}

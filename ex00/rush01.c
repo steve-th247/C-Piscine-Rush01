@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 		apply_sudoku_rule(solu_grid, possi_grid);
 		apply_elimination_rule(solu_grid, possi_grid);
 		apply_vpts_rules(solu_grid, possi_grid, vpts);
-		if (is_unsolvable(solu_grid))
+		if (is_unsolvable(possi_grid))
 		{
 			write(1, "Error\n", 6);
 			return (-1);

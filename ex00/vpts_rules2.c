@@ -39,15 +39,18 @@ void	apply_vpts_rule2_colup(short int solu_grid[][4],
 	int			row_ind;
 	short int	*ptr;
 	short int	bitmask;
+	short int	n_bit_shift;
 
 	row_ind = vpts - 2;
+	n_bit_shift = 0;
 	if (solu_grid[vpts - 1][col_ind] == 4)
 	{
-		while (row_ind > 0)
+		bitmask = get_mask_most_sig(possi_grid[row_ind][col_ind]);
+		while (row_ind >= 0)
 		{
 			ptr = &possi_grid[row_ind][col_ind];
-			bitmask = get_mask_most_sig(possi_grid[row_ind + 1][col_ind]);
-			*ptr = *ptr & (bitmask >> 1);
+			*ptr = *ptr & (bitmask >> n_bit_shift);
+			n_bit_shift++;
 			row_ind--;
 		}
 	}
@@ -59,15 +62,18 @@ void	apply_vpts_rule2_coldown(short int solu_grid[][4],
 	int			row_ind;
 	short int	*ptr;
 	short int	bitmask;
+	short int	n_bit_shift;
 
 	row_ind = 5 - vpts;
+	n_bit_shift = 0;
 	if (solu_grid[4 - vpts][col_ind] == 4)
 	{
+		bitmask = get_mask_most_sig(possi_grid[row_ind][col_ind]);
 		while (row_ind < 4)
 		{
 			ptr = &possi_grid[row_ind][col_ind];
-			bitmask = get_mask_most_sig(possi_grid[row_ind - 1][col_ind]);
-			*ptr = *ptr & (bitmask >> 1);
+			*ptr = *ptr & (bitmask >> n_bit_shift);
+			n_bit_shift++;
 			row_ind++;
 		}
 	}
@@ -79,15 +85,18 @@ void	apply_vpts_rule2_rowleft(short int solu_grid[][4],
 	int			col_ind;
 	short int	*ptr;
 	short int	bitmask;
+	short int	n_bit_shift;
 
 	col_ind = vpts - 2;
+	n_bit_shift = 0;
 	if (solu_grid[row_ind][vpts - 1] == 4)
 	{
-		while (col_ind > 0)
+		bitmask = get_mask_most_sig(possi_grid[row_ind][col_ind]);
+		while (col_ind >= 0)
 		{
 			ptr = &possi_grid[row_ind][col_ind];
-			bitmask = get_mask_most_sig(possi_grid[row_ind][col_ind + 1]);
-			*ptr = *ptr & (bitmask >> 1);
+			*ptr = *ptr & (bitmask >> n_bit_shift);
+			n_bit_shift++;
 			col_ind--;
 		}
 	}
@@ -99,15 +108,18 @@ void	apply_vpts_rule2_rowright(short int solu_grid[][4],
 	int			col_ind;
 	short int	*ptr;
 	short int	bitmask;
+	short int	n_bit_shift;
 
 	col_ind = 5 - vpts;
+	n_bit_shift = 0;
 	if (solu_grid[row_ind][4 - vpts] == 4)
 	{
+		bitmask = get_mask_most_sig(possi_grid[row_ind][col_ind]);
 		while (col_ind < 4)
 		{
 			ptr = &possi_grid[row_ind][col_ind];
-			bitmask = get_mask_most_sig(possi_grid[row_ind][col_ind - 1]);
-			*ptr = *ptr & (bitmask >> 1);
+			*ptr = *ptr & (bitmask >> n_bit_shift);
+			n_bit_shift++;
 			col_ind++;
 		}
 	}

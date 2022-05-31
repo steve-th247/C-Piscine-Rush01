@@ -33,7 +33,7 @@ int	get_first_visible_height_col(short int solu_grid[][4], int vpts_ind)
 		dir = 1;
 	else
 		dir = -1;
-	if (dir > 1)
+	if (dir > 0)
 		row_ind = 0;
 	else
 		row_ind = 3;
@@ -57,7 +57,7 @@ int	get_first_visible_height_row(short int solu_grid[][4], int vpts_ind)
 		dir = 1;
 	else
 		dir = -1;
-	if (dir > 1)
+	if (dir > 0)
 		col_ind = 0;
 	else
 		col_ind = 3;

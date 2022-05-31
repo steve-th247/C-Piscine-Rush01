@@ -15,4 +15,5 @@
 
 int	is_solved(short int solu_grid[][4]);
 int	is_unsolvable(short int possi_grid[][4]);
+int	is_solution_valid(short int solu_grid[][4], short int *vpts);
 #endif

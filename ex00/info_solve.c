@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "bit_funcs.h"
+#include "info_visible.h"
 
 int	is_solved(short int solu_grid[][4])
 {
@@ -52,4 +53,18 @@ int	is_unsolvable(short int possi_grid[][4])
 		row_ind++;
 	}
 	return (0);
+}
+
+int	is_solution_valid(short int solu_grid[][4], short int *vpts)
+{
+	int	i;
+
+	i = 0;
+	while(i < 16)
+	{
+		if (vpts[i] != get_visible_num(solu_grid, i))
+			return (0);
+		i++;
+	}
+	return (1);
 }

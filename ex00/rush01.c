@@ -19,6 +19,8 @@
 #include "vpts_rules_main.h"
 
 void	initialize_grids(short int solu_grid[][4], short int possi_grid[][4]);
+void	apply_iterative_rule(short int solu_grid[][4], short int possi_grid[][4],
+			short int *vpts);
 
 int	main(int argc, char **argv)
 {
@@ -36,14 +38,14 @@ int	main(int argc, char **argv)
 	apply_edge_rules(solu_grid, vpts);
 	while (!is_solved(solu_grid))
 	{
-		apply_sudoku_rule(solu_grid, possi_grid);
-		apply_elimination_rule(solu_grid, possi_grid);
-		apply_vpts_rules(solu_grid, possi_grid, vpts);
+		apply_iterative_rule(solu_grid, possi_grid, vpts);
 		if (is_unsolvable(possi_grid))
-		{
-			write(1, "Error\n", 6);
-			return (-1);
-		}
+			break;
+	}
+	if (!is_solved(solu_grid) || !is_solution_valid(solu_grid, vpts))
+	{
+		write(1, "Error\n", 6);
+		return (-1);
 	}
 	write_sol_to_stdout(solu_grid);
 	return (0);
@@ -67,4 +69,12 @@ void	initialize_grids(short int solu_grid[][4], short int possi_grid[][4])
 		ind_col = 0;
 		ind_row++;
 	}
+}
+
+void	apply_iterative_rule(short int solu_grid[][4], short int possi_grid[][4],
+			short int *vpts)
+{
+	apply_sudoku_rule(solu_grid, possi_grid);
+	apply_elimination_rule(solu_grid, possi_grid);
+	apply_vpts_rules(solu_grid, possi_grid, vpts);
 }

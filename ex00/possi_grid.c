@@ -28,6 +28,7 @@ void	update_possi_grid(short int solu_grid[][4], short int possi_grid[][4])
 					solu_grid[row_ind][col_ind]);
 			col_ind++;
 		}
+		col_ind = 0;
 		row_ind++;
 	}
 }

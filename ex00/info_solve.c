@@ -27,6 +27,7 @@ int	is_solved(short int solu_grid[][4])
 				return (0);
 			col_ind++;
 		}
+		col_ind = 0;
 		row_ind++;
 	}
 	return (1);
@@ -47,6 +48,7 @@ int	is_unsolvable(short int possi_grid[][4])
 				return (1);
 			col_ind++;
 		}
+		col_ind = 0;
 		row_ind++;
 	}
 	return (0);

@@ -25,13 +25,13 @@ void	apply_vpts_rule5(short int solu_grid[][4], short int possi_grid[][4],
 	while (i < 16)
 	{
 		if (i >= 0 && i <= 3)
-			apply_vpts_rule5_colup(solu_grid, possi_grid, vpts, vpts[i]);
+			apply_vpts_rule5_colup(solu_grid, possi_grid, vpts, i);
 		else if (i >= 4 && i <= 7)
-			apply_vpts_rule5_coldown(solu_grid, possi_grid, vpts, vpts[i]);
+			apply_vpts_rule5_coldown(solu_grid, possi_grid, vpts, i);
 		else if (i >= 8 && i <= 11)
-			apply_vpts_rule5_rowleft(solu_grid, possi_grid, vpts, vpts[i]);
+			apply_vpts_rule5_rowleft(solu_grid, possi_grid, vpts, i);
 		else if (i >= 12 && i <= 15)
-			apply_vpts_rule5_rowright(solu_grid, possi_grid, vpts, vpts[i]);
+			apply_vpts_rule5_rowright(solu_grid, possi_grid, vpts, i);
 		i++;
 	}
 }

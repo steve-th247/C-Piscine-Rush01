@@ -52,9 +52,11 @@ void	write_sol_to_stdout(short int solu_grid[][4])
 			out_str[0] = solu_grid[row_ind][col_ind] + '0';
 			write(1, out_str, 1);
 			if (col_ind < 3)
-				write(1, out_str, 2);
+				write(1, out_str + 1, 1);
 			col_ind++;
 		}
+		write(1, "\n", 1);
+		col_ind = 0;
 		row_ind++;
 	}
 }
@@ -68,11 +70,11 @@ void	str_split_to_int(short int *vpts, char *args)
 	args_ind = 0;
 	while (args_ind <= 31)
 	{
-		if (args[args_ind] >= '0' && args[args_ind] >= '9'
+		if (args[args_ind] >= '0' && args[args_ind] <= '9'
 			&& (args[args_ind + 1] == ' ' || args[args_ind + 1] == '\0')
 			&& vpts_ind < 16)
 		{
-			vpts[vpts_ind] = args[args_ind] + '0';
+			vpts[vpts_ind] = args[args_ind] - '0';
 			vpts_ind += 1;
 		}
 		args_ind += 2;

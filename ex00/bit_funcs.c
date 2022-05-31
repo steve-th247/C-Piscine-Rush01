@@ -53,13 +53,13 @@ int	get_ind_lease_sig(short int bin_num)
 int	binary_to_ind(short int bin_num)
 {
 	if (bin_num & 0b1000)
-		return (4);
-	else if (bin_num & 0b0100)
 		return (3);
-	else if (bin_num & 0b0010)
+	else if (bin_num & 0b0100)
 		return (2);
-	else if (bin_num & 0b0001)
+	else if (bin_num & 0b0010)
 		return (1);
-	else
+	else if (bin_num & 0b0001)
 		return (0);
+	else
+		return (-1);
 }

@@ -64,6 +64,7 @@ void	initialize_grids(short int solu_grid[][4], short int possi_grid[][4])
 			possi_grid[ind_row][ind_col] = 0b1111;
 			ind_col++;
 		}
+		ind_col = 0;
 		ind_row++;
 	}
 }

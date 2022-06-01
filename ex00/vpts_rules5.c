@@ -47,8 +47,9 @@ void	apply_vpts_rule5_colup(short int solu_grid[][4],
 	row_ind = 0;
 	col_ind = vpts_ind % 4;
 	num_hidden = get_hidden_num(solu_grid, vpts_ind);
-	if (get_index_first_filled(solu_grid, vpts_ind)
+	if ((get_index_first_filled(solu_grid, vpts_ind)
 		== (4 - vpts[vpts_ind] - num_hidden + 1))
+		&& num_hidden != (4 - vpts[vpts_ind]))
 	{
 		sol_val = binary_to_ind(possi_grid[row_ind][col_ind]) + 1;
 		solu_grid[row_ind][col_ind] = sol_val;
@@ -67,8 +68,9 @@ void	apply_vpts_rule5_coldown(short int solu_grid[][4],
 	row_ind = 3;
 	col_ind = vpts_ind % 4;
 	num_hidden = get_hidden_num(solu_grid, vpts_ind);
-	if (get_index_first_filled(solu_grid, vpts_ind)
+	if ((get_index_first_filled(solu_grid, vpts_ind)
 		== (4 - vpts[vpts_ind] - num_hidden + 1))
+		&& num_hidden != (4 - vpts[vpts_ind]))
 	{
 		sol_val = binary_to_ind(possi_grid[row_ind][col_ind]) + 1;
 		solu_grid[row_ind][col_ind] = sol_val;
@@ -87,8 +89,9 @@ void	apply_vpts_rule5_rowleft(short int solu_grid[][4],
 	row_ind = vpts_ind % 4;
 	col_ind = 0;
 	num_hidden = get_hidden_num(solu_grid, vpts_ind);
-	if (get_index_first_filled(solu_grid, vpts_ind)
+	if ((get_index_first_filled(solu_grid, vpts_ind)
 		== (4 - vpts[vpts_ind] - num_hidden + 1))
+		&& num_hidden != (4 - vpts[vpts_ind]))
 	{
 		sol_val = binary_to_ind(possi_grid[row_ind][col_ind]) + 1;
 		solu_grid[row_ind][col_ind] = sol_val;
@@ -107,8 +110,9 @@ void	apply_vpts_rule5_rowright(short int solu_grid[][4],
 	row_ind = vpts_ind % 4;
 	col_ind = 3;
 	num_hidden = get_hidden_num(solu_grid, vpts_ind);
-	if (get_index_first_filled(solu_grid, vpts_ind)
+	if ((get_index_first_filled(solu_grid, vpts_ind)
 		== (4 - vpts[vpts_ind] - num_hidden + 1))
+		&& num_hidden != (4 - vpts[vpts_ind]))
 	{
 		sol_val = binary_to_ind(possi_grid[row_ind][col_ind]) + 1;
 		solu_grid[row_ind][col_ind] = sol_val;

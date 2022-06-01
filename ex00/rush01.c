@@ -6,7 +6,7 @@
 /*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:24:50 by tjien-ji          #+#    #+#             */
-/*   Updated: 2022/06/01 08:40:35 by tjien-ji         ###   ########.fr       */
+/*   Updated: 2022/06/01 09:08:08 by tjien-ji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	apply_edge_rules(solu_grid, vpts);
 	while (!is_solved(solu_grid))
 	{
-		apply_iterative_rule(solu_grid, possi_grid, vpts);
+		apply_iterative_rules(solu_grid, possi_grid, vpts);
 		if (is_unsolvable(possi_grid))
 			break ;
 	}
@@ -71,7 +71,7 @@ void	initialize_grids(short int solu_grid[][4], short int possi_grid[][4])
 	}
 }
 
-void	apply_iterative_rule(short int solu_grid[][4],
+void	apply_iterative_rules(short int solu_grid[][4],
 			short int possi_grid[][4], short int *vpts)
 {
 	apply_sudoku_rule(solu_grid, possi_grid);

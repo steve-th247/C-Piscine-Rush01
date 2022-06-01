@@ -6,7 +6,7 @@
 /*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:08:50 by tjien-ji          #+#    #+#             */
-/*   Updated: 2022/05/29 18:10:27 by tjien-ji         ###   ########.fr       */
+/*   Updated: 2022/06/01 08:39:24 by tjien-ji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	is_solution_valid(short int solu_grid[][4], short int *vpts)
 	int	i;
 
 	i = 0;
-	while(i < 16)
+	while (i < 16)
 	{
 		if (vpts[i] != get_visible_num(solu_grid, i))
 			return (0);

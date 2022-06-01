@@ -6,7 +6,7 @@
 /*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:24:50 by tjien-ji          #+#    #+#             */
-/*   Updated: 2022/05/29 18:24:55 by tjien-ji         ###   ########.fr       */
+/*   Updated: 2022/06/01 08:40:35 by tjien-ji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 #include "vpts_rules_main.h"
 
 void	initialize_grids(short int solu_grid[][4], short int possi_grid[][4]);
-void	apply_iterative_rule(short int solu_grid[][4], short int possi_grid[][4],
-			short int *vpts);
+void	apply_iterative_rule(short int solu_grid[][4],
+			short int possi_grid[][4], short int *vpts);
 
 int	main(int argc, char **argv)
 {
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 	{
 		apply_iterative_rule(solu_grid, possi_grid, vpts);
 		if (is_unsolvable(possi_grid))
-			break;
+			break ;
 	}
 	if (!is_solved(solu_grid) || !is_solution_valid(solu_grid, vpts))
 	{
@@ -71,8 +71,8 @@ void	initialize_grids(short int solu_grid[][4], short int possi_grid[][4])
 	}
 }
 
-void	apply_iterative_rule(short int solu_grid[][4], short int possi_grid[][4],
-			short int *vpts)
+void	apply_iterative_rule(short int solu_grid[][4],
+			short int possi_grid[][4], short int *vpts)
 {
 	apply_sudoku_rule(solu_grid, possi_grid);
 	apply_elimination_rule(solu_grid, possi_grid);

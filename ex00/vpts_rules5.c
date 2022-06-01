@@ -51,7 +51,7 @@ void	apply_vpts_rule5_colup(short int solu_grid[][4],
 			== (4 - vpts[vpts_ind] - num_hidden + 1))
 		&& num_hidden != (4 - vpts[vpts_ind]))
 	{
-		sol_val = binary_to_ind(possi_grid[row_ind][col_ind]) + 1;
+		sol_val = get_ind_most_sig(possi_grid[row_ind][col_ind]) + 1;
 		solu_grid[row_ind][col_ind] = sol_val;
 		update_possi_grid(solu_grid, possi_grid);
 	}
@@ -72,7 +72,7 @@ void	apply_vpts_rule5_coldown(short int solu_grid[][4],
 			== (4 - vpts[vpts_ind] - num_hidden + 1))
 		&& num_hidden != (4 - vpts[vpts_ind]))
 	{
-		sol_val = binary_to_ind(possi_grid[row_ind][col_ind]) + 1;
+		sol_val = get_ind_most_sig(possi_grid[row_ind][col_ind]) + 1;
 		solu_grid[row_ind][col_ind] = sol_val;
 		update_possi_grid(solu_grid, possi_grid);
 	}
@@ -93,7 +93,7 @@ void	apply_vpts_rule5_rowleft(short int solu_grid[][4],
 			== (4 - vpts[vpts_ind] - num_hidden + 1))
 		&& num_hidden != (4 - vpts[vpts_ind]))
 	{
-		sol_val = binary_to_ind(possi_grid[row_ind][col_ind]) + 1;
+		sol_val = get_ind_most_sig(possi_grid[row_ind][col_ind]) + 1;
 		solu_grid[row_ind][col_ind] = sol_val;
 		update_possi_grid(solu_grid, possi_grid);
 	}
@@ -114,7 +114,7 @@ void	apply_vpts_rule5_rowright(short int solu_grid[][4],
 			== (4 - vpts[vpts_ind] - num_hidden + 1))
 		&& num_hidden != (4 - vpts[vpts_ind]))
 	{
-		sol_val = binary_to_ind(possi_grid[row_ind][col_ind]) + 1;
+		sol_val = get_ind_most_sig(possi_grid[row_ind][col_ind]) + 1;
 		solu_grid[row_ind][col_ind] = sol_val;
 		update_possi_grid(solu_grid, possi_grid);
 	}

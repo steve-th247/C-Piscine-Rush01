@@ -6,7 +6,7 @@
 /*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:14:53 by tjien-ji          #+#    #+#             */
-/*   Updated: 2022/05/29 18:49:22 by tjien-ji         ###   ########.fr       */
+/*   Updated: 2022/06/01 09:27:09 by tjien-ji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	is_input_valid(char *args)
 		return (0);
 	while (args_ind < args_len)
 	{
-		if ((args_ind % 2) == 0 && !(args[args_ind] >= '0'
-				&& args[args_ind] <= '9'))
+		if ((args_ind % 2) == 0 && !(args[args_ind] >= '1'
+				&& args[args_ind] <= '4'))
 			return (0);
 		if ((args_ind % 2) == 1 && !(args[args_ind] == ' '))
 			return (0);

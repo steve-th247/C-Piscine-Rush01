@@ -6,7 +6,7 @@
 /*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 17:55:25 by tjien-ji          #+#    #+#             */
-/*   Updated: 2022/06/01 10:08:16 by tjien-ji         ###   ########.fr       */
+/*   Updated: 2022/06/01 10:52:59 by tjien-ji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	get_ind_most_sig(short int bin_num)
 		return (-1);
 }
 
-int	get_ind_lease_sig(short int bin_num)
+int	get_ind_least_sig(short int bin_num)
 {
 	if (bin_num & 0b0001)
 		return (0);

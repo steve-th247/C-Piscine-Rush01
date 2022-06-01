@@ -6,7 +6,7 @@
 /*   By: tjien-ji <tjien-ji@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:24:50 by tjien-ji          #+#    #+#             */
-/*   Updated: 2022/06/01 09:08:08 by tjien-ji         ###   ########.fr       */
+/*   Updated: 2022/06/01 09:54:58 by tjien-ji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include "vpts_rules_main.h"
 
 void	initialize_grids(short int solu_grid[][4], short int possi_grid[][4]);
-void	apply_iterative_rule(short int solu_grid[][4],
+void	apply_iterative_rules(short int solu_grid[][4],
 			short int possi_grid[][4], short int *vpts);
 
 int	main(int argc, char **argv)
